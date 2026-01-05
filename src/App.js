@@ -16,6 +16,8 @@ const filters = [
   { key: "design", label: "Design" }
 ];
 
+
+
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [portfolio, setPortfolio] = useState(undefined);
@@ -90,7 +92,7 @@ function App() {
         {!loading && !error && (
           <>
             <Skills groups={skills} />
-            <Work items={portfolio} />
+            <Work items={portfolio} filters={filters} />
             <Services />
           </>
         )}

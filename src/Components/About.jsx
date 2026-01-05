@@ -6,7 +6,7 @@ function About() {
     <section className="about section" id="about">
       <SectionTitle heading="My Intro" title="About me" />
       <div className="about-container container grid">
-        <img src="/images/tharuwa.png" alt="About" className="about-img" />
+        <img src="/tharuwa.png" alt="About" className="about-img" />
         <div className="about-data">
           <h3 className="about-heading">Hi, I'm Tharusha Thathsara, based in Sri Lanka</h3>
           <p className="about-description">

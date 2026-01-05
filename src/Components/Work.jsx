@@ -1,12 +1,14 @@
 import React, { useState, useMemo } from 'react'
 import SectionTitle from './SectionTitle'
 
+
+
 const defaultPortfolio = [
   {
     _id: 1,
     title: "Police 360 Web Design",
     category: "web",
-    image: "/images/police360.png",
+    image: "/police360.png",
     link: "https://police360-frontend.vercel.app/",
     description: "A full-stack system to manage police complaints, officers, evidence, and case progress efficiently.",
     details: { year: 2025, technologies: ["React", "Node.js", "Express.js", "MongoDB", "JavaScript", "Tailwind CSS"], role: "complaint management" }
@@ -15,7 +17,7 @@ const defaultPortfolio = [
     _id: 2,
     title: "The Fresh Mart Web Design",
     category: "web",
-    image: "/images/grocery.png",
+    image: "/grocery.png",
     description: "Built a web-based grocery ordering system to digitize local grocery shopping for efficiency and convenience.",
     details: { year: 2025, technologies: ["JAVA", "PHP", "HTML", "JavaScript", "CSS", "MySQL"], role: "Role based user management , Frontend and Backend Development" }
   },
@@ -23,7 +25,7 @@ const defaultPortfolio = [
     _id: 3,
     title: "Fashion Haven Web Design",
     category: "web",
-    image: "/images/fashion.png",
+    image: "/fashion.png",
     description: "Developed a dynamic and responsive fashion retail website targeting youth and style-conscious shoppers.",
     details: { year: 2024, technologies: ["HTML", "JavaScript", "CSS", "MySQL"],role: "Role based user management , Frontend and Backend Development" }
   },
@@ -31,7 +33,7 @@ const defaultPortfolio = [
     _id: 4,
     title: "Furni House Mobile App",
     category: "app",
-    image: "/images/Furni app.jpg",
+    image: "/Furni app.jpg",
     description: "Android mobile application & A native Android app built to simplify furniture shopping with a smooth and modern mobile experience.",
     details: { year: 2025, technologies: ["Kotlin", "Android SDK", "Gradle"],role: "UI/UX Design , Function" }
   },
@@ -39,7 +41,7 @@ const defaultPortfolio = [
     _id: 5,
     title: "Wellnest Mobile App",
     category: "app",
-    image: "/images/wellnest.png",
+    image: "/wellnest.png",
     description: "Android mobile application & A wellness app promoting healthy habits through guided activities and progress tracking.",
     details: { year: 2025, technologies: ["Kotlin", "Android SDK", "Gradle"], role: "UI/UX Design , Key Functionality" }
   },
@@ -48,13 +50,13 @@ const defaultPortfolio = [
     title: "Furni House UI Design",
     link: "https://www.figma.com/design/DQ1EnZz4vmupHuVuHbYMRB/Untitled?node-id=0-1&t=dqVAw0hg1XTrTBpp-1",
     category: "design",
-    image: "/images/furni house uiux.png",
+    image: "/furni house uiux.png",
     description: "Complete UI design system",
     details: { year: 2025, technologies: ["Figma", "Design System"], role: "UI/UX Design" }
   }
 ];
 
-function Work({ items = [], filters = [] }) {
+function Work({ items = defaultPortfolio, filters = [] }) {
   const [filter, setFilter] = useState("all");
   const [modalItem, setModalItem] = useState(null);
 
