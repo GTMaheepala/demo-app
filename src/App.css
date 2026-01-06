@@ -702,17 +702,17 @@ input {
 .services-container {
   grid-template-columns: repeat(3, 250px);
   justify-content: center;
-  column-gap: 1.8rem;
+  column-gap: 5.8rem;
 }
 .services-content {
   position: relative;
   background-color: var(--box-color);
-  padding: 6rem 0 2rem 2.5rem;
+  padding: 10rem 0 6rem 5.0rem;
   border-radius: 0.25rem;
 }
 .services-icon {
   display: block;
-  font-size: 1.8rem;
+  font-size: 2.8rem;
   color: var(--skin-color);
   margin-bottom: var(--mb1);
 }
@@ -738,11 +738,11 @@ input {
 }
 .services-modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  inset: 0;
+  /* subtle dim + blur so modal stands out, without fully hiding the card */
+  background-color: rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -750,7 +750,7 @@ input {
   z-index: var(--z-modal);
   opacity: 0;
   visibility: hidden;
-  transition: 0.4s;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
 }
 .active-modal {
   opacity: 1;
@@ -762,6 +762,9 @@ input {
   background-color: var(--box-color);
   padding: 4.5rem 2.5rem 2.5rem;
   border-radius: 0.5rem;
+  /* avoid pushing or overflowing the viewport — keep modal content scrollable */
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
 }
 .services-modal-close {
   position: absolute;
@@ -876,7 +879,7 @@ input {
 }
 .contact-card-icon {
   font-size: 1.8rem;
-  color: var(--title-color);
+  color: var(--skin-color);
   margin-bottom: var(--mb025);
 }
 .contact-card-title,

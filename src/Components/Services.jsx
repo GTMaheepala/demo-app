@@ -57,7 +57,7 @@ function Services() {
             </span>
 
             <div className={`services-modal ${active === idx ? "active-modal" : ""}`}>
-              <div className="services-modal-content">
+              <div className={`services-modal-content ${active === idx ? 'open' : ''}`}>
                 <i className="uil uil-times services-modal-close" onClick={() => setActive(null)}></i>
                 <h3 className="services-modal-title">{service.title}</h3>
                 <p className="services-modal-description">{service.description}</p>

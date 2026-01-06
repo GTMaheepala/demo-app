@@ -53,7 +53,9 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const selector = 'section, .work-card, .home-container, .about-img, .skills-container, .services-content, .contact-container, .footer-bg';
+    // Exclude .services-content to avoid giving it transform styles
+    // (transforms create a containing block that breaks position:fixed for modals)
+    const selector = 'section, .work-card, .home-container, .about-img, .skills-container, .contact-container, .footer-bg';
 
     const addAndObserve = (observer) => {
       const elems = Array.from(document.querySelectorAll(selector));
@@ -66,6 +68,11 @@ function App() {
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          // debug logging to help diagnose reveal issues
+          if (process.env.NODE_ENV === 'development') {
+            // eslint-disable-next-line no-console
+            console.debug('IO entry', entry.target.className, 'isIntersecting=', entry.isIntersecting);
+          }
           if (entry.isIntersecting) {
             entry.target.classList.add('show');
           } else {
