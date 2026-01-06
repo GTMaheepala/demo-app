@@ -206,8 +206,9 @@ input {
 }
 .theme-toggle {
   position: absolute;
-  top: 1.8rem;
-  left: 89.8rem;
+  top: 6rem;
+  left: 50%;
+  transform: translateX(-50%);
   width: 40px;
   height: 40px;
   display: flex;
@@ -218,12 +219,14 @@ input {
   border-radius: 50%;
   color: var(--title-color);
   font-size: 1.25rem;
-  transition: all 0.3s ease;
+  transition: transform 0.18s ease, background-color 0.18s ease;
   border: 1px solid var(--skin-color);
+  z-index: 20;
+  pointer-events: auto;
 }
 .theme-toggle:hover {
   background-color: var(--skin-color);
-  transform: scale(1.1);
+  transform: translateX(-50%) scale(1.08);
 }
 .nav-menu {
   position: fixed;
@@ -1339,3 +1342,38 @@ textarea.input {
 .social-share {
   color: #c3013e;
 }
+
+/* Scroll reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px) scale(.995);
+  transition: opacity 600ms cubic-bezier(.2,.9,.2,1), transform 650ms cubic-bezier(.2,.9,.2,1);
+  will-change: opacity, transform;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Direction helpers */
+.reveal-left { transform: translateX(-28px) translateY(0) scale(.995); }
+.reveal-right { transform: translateX(28px) translateY(0) scale(.995); }
+.reveal-fade { transform: translateY(0) scale(.995); }
+.reveal.show.reveal-left,
+.reveal.show.reveal-right,
+.reveal.show.reveal-fade { transform: translateX(0) translateY(0) scale(1); }
+
+/* Stagger children: use --stagger-index inline style to vary delays */
+.reveal > * {
+  transition-delay: calc(var(--stagger-index, 0) * 60ms);
+}
+
+/* Subtle home-specific origin */
+.home.reveal { transform-origin: center right; }
+
+/* Temporarily disable the reduced-motion override so animations run while testing.
+   If you want to respect the user's OS preference, restore or remove this comment block. */
+/* @media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal.show, .reveal > * { transition: none !important; transform: none !important; }
+} */

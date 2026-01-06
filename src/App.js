@@ -54,8 +54,14 @@ function App() {
 
   useEffect(() => {
     const selector = 'section, .work-card, .home-container, .about-img, .skills-container, .services-content, .contact-container, .footer-bg';
-    const elems = Array.from(document.querySelectorAll(selector));
-    elems.forEach((el) => el.classList.add('reveal'));
+
+    const addAndObserve = (observer) => {
+      const elems = Array.from(document.querySelectorAll(selector));
+      elems.forEach((el) => {
+        if (!el.classList.contains('reveal')) el.classList.add('reveal');
+        observer.observe(el);
+      });
+    };
 
     const io = new IntersectionObserver(
       (entries) => {
@@ -70,9 +76,18 @@ function App() {
       { threshold: 0.12 }
     );
 
-    elems.forEach((el) => io.observe(el));
+    addAndObserve(io);
 
-    return () => io.disconnect();
+    // Watch for dynamically added sections/elements and attach observer
+    const mo = new MutationObserver(() => {
+      addAndObserve(io);
+    });
+    mo.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      io.disconnect();
+      mo.disconnect();
+    };
   }, []);
 
   const toggleTheme = () => {
