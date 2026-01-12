@@ -6,7 +6,7 @@ import SectionTitle from './SectionTitle'
 const defaultPortfolio = [
   {
     _id: 1,
-    title: "Police 360 Web Design",
+    title: "Police Investigations and Case management system",
     category: "web",
     image: "/police360.png",
     link: "https://police360-frontend.vercel.app/",
@@ -15,7 +15,7 @@ const defaultPortfolio = [
   },
   {
     _id: 2,
-    title: "The Fresh Mart Web Design",
+    title: "Online Grocery Management System",
     category: "web",
     image: "/grocery.png",
     description: "Built a web-based grocery ordering system to digitize local grocery shopping for efficiency and convenience.",
@@ -23,7 +23,7 @@ const defaultPortfolio = [
   },
   {
     _id: 3,
-    title: "Fashion Haven Web Design",
+    title: "Online Fashion Retail Management System",
     category: "web",
     image: "/fashion.png",
     description: "Developed a dynamic and responsive fashion retail website targeting youth and style-conscious shoppers.",
@@ -31,7 +31,7 @@ const defaultPortfolio = [
   },
   {
     _id: 4,
-    title: "Furni House Mobile App",
+    title: "Online Furniture Purchasing Mobile App",
     category: "app",
     image: "/Furni app.jpg",
     description: "Android mobile application & A native Android app built to simplify furniture shopping with a smooth and modern mobile experience.",
@@ -39,7 +39,7 @@ const defaultPortfolio = [
   },
   {
     _id: 5,
-    title: "Wellnest Mobile App",
+    title: "A Digital Wellness Support Mobile Application",
     category: "app",
     image: "/wellnest.png",
     description: "Android mobile application & A wellness app promoting healthy habits through guided activities and progress tracking.",
@@ -47,7 +47,7 @@ const defaultPortfolio = [
   },
   {
     _id: 6,
-    title: "Furni House UI Design",
+    title: "Online Furniture Purchasing Mobile App UI Design",
     link: "https://www.figma.com/design/DQ1EnZz4vmupHuVuHbYMRB/Untitled?node-id=0-1&t=dqVAw0hg1XTrTBpp-1",
     category: "design",
     image: "/furni house uiux.png",

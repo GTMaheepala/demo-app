@@ -30,10 +30,16 @@ function Home() {
           <p className="home-description">
             I’m a software engineering undergraduate who enjoys building efficient, innovative solutions that help organizations succeed. I’m a motivated team player with strong leadership and communication skills, known for being hardworking, adaptable, and enthusiastic when working with others.
           </p>
-          <a href="#about" className="button">
-            <i className="uil uil-user button-icon"></i>
-            More About me!
-          </a>
+          <div className="home-buttons">
+            <a href="#about" className="button">
+              <i className="uil uil-user button-icon"></i>
+              More About me!
+            </a>
+            <a href="/Tharusha Thathsara CV 2026.pdf" className="button">
+              <i className="uil uil-file-download button-icon"></i>
+              Download CV
+            </a>
+          </div>
         </div>
 
         <div className="my-info">

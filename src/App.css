@@ -307,7 +307,7 @@ input {
 
 /* Main - Home */
 .home {
-    background-image: url("/public/tharuwa.png");
+    background-image: url("/public/IMG_6450.PNG");
   background-size: contain;
   background-position: center right;
   background-repeat: no-repeat;
@@ -1380,3 +1380,15 @@ textarea.input {
 /* @media (prefers-reduced-motion: reduce) {
   .reveal, .reveal.show, .reveal > * { transition: none !important; transform: none !important; }
 } */
+
+
+.home-buttons{
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.home-buttons .button{
+  margin: 0;
+}

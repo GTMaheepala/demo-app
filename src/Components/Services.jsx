@@ -37,7 +37,7 @@ function Services() {
 
   return (
     <section className="services section" id="services">
-      <SectionTitle heading="Services" title="What I Offer" />
+      <SectionTitle heading="Services" title="I'm capable of" />
       <div className="services-container container grid" style={{ gridTemplateColumns: 'repeat(2, 250px)' }}>
         {services.map((service, idx) => (
           <div key={service.title} className="services-content">
